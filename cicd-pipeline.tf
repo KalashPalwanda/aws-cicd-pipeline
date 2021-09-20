@@ -1,5 +1,5 @@
 resource "aws_codebuild_project" "tf-plan" {
-  name          = "tf-cicd-plan2"
+  name          = "tf-cicd-plan"
   description   = "Plan stage for terraform"
   service_role  = aws_iam_role.tf-codebuild-role.arn
 
@@ -52,7 +52,7 @@ resource "aws_codebuild_project" "tf-apply" {
 resource "aws_codepipeline" "cicd_pipeline" {
 
     name = "tf-cicd"
-    role_arn = aws_iam_role.tf-codepipeline-role.arn
+    role_arn = aws_iam_role.tf-codepipeline-role1.arn
 
     artifact_store {
         type="S3"

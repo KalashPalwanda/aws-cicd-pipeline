@@ -1,5 +1,5 @@
-resource "aws_iam_role" "tf-codepipeline-role" {
-  name = "tf-codepipeline-role"
+resource "aws_iam_role" "tf-codepipeline-role1" {
+  name = "tf-codepipeline-role1"
 
   assume_role_policy = <<EOF
 {
@@ -43,7 +43,7 @@ resource "aws_iam_policy" "tf-cicd-pipeline-policy" {
 
 resource "aws_iam_role_policy_attachment" "tf-cicd-pipeline-attachment" {
     policy_arn = aws_iam_policy.tf-cicd-pipeline-policy.arn
-    role = aws_iam_role.tf-codepipeline-role.id
+    role = aws_iam_role.tf-codepipeline-role1.id
 }
 
 
